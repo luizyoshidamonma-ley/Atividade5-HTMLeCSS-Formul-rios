@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            border-radius: 8px;
+        }
+
+        html {
+            min-height: 100%;
+        }
+
+
+        body {
+            display: flex;
+            min-height: 100vh;
+            background-color: rgb(250, 227, 255);
+            justify-content: center;
+
+        }
+
+        h1 {
+            position: absolute;
+        }
+
+        form {
+            margin: 50px;
+            padding: 50px;
+            max-height: inherit;
+            height: fit-content;
+            max-width: inherit;
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            background-color: rgb(230, 250, 201);
+            border-radius: 8px;
+            gap: 15px;
+
+            label{
+                font-size: 16px;
+                font-weight: 700;
+            }
+
+
+
+            input:focus{
+                background-color: rgb(251, 215, 235);
+            }
+
+            textarea:focus{
+                background-color: rgb(251, 215, 235);
+            }
+
+            button {
+                background-color: rgb(48, 48, 48);
+                color: #fff;
+            }
+
+            button:hover {
+                background-color: #fff;
+                color: rgb(48, 48, 48);
+                cursor: pointer;
+            }
+
+
+
+            input div {
+                align-self: right;
+            }
+
+            .curso{
+                border: 2px black solid;
+                padding: 8px;
+                border-radius: 8px;
+
+                div{
+                    display: flex;
+                    justify-content: space-between;
+                    
+                }
+
+                label p{
+                    font-size: 20px;
+                }
+            }
+
+            textarea{
+                resize: none;
+                
+            }
+
+            .comentario{
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                border: 2px black solid;
+                padding: 8px;
+                border-radius: 8px;
+
+
+                input[type="email"]{
+                    margin: 0;
+                    padding: 0;
+                }
+
+                .buttonComentario{
+                    width: 20%;
+                    align-self: flex-end;
+                }
+            }
+
+            .buttonFormulario{
+                margin-top: 30px;
+                background-color: rgb(48, 48, 48);
+                color: #fff;
+                height: 28px;
+                border-radius: 8px;
+            }
+
+        }
+
+        @media (max-width: 1033px) {
+            form {
+                width:98%;
+                max-width: inherit;
+                margin: 80px 16px 16px;
+                padding: 24px;
+                height: 120%;
+                max-height: inherit;
+            }
+
+            form input[type="radio"] {
+                width: auto;
+            }
+
+            form .comentario .buttonComentario {
+                width: auto;
+                padding: 8px 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Formulário</h1>
+    <form>
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" placeholder="Digite seu nome">
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" placeholder="Digite seu Email" autocomplete="on">
+
+        <label for="Senha">Senha:</label>
+        <input type="password" name="Senha" placeholder="Digite seu Senha">
+
+        <label for="Dnascimento">Data de Nascimento:</label>
+        <input type="date" name="Dnascimento" placeholder="Digite seu Data de Nascimento">
+
+        <section class="curso">
+            <label for="curso"><p>Curso:</p></label>
+            <div>
+                <label for="engsw">Engenharia de Software</label>
+                <input type="radio" name="curso">
+            </div>
+            <div>
+                <label for="CiComp">Ciência da Computação</label>
+                <input type="radio" name="curso">
+            </div>
+            <div>
+                <label for="adm">Administração</label>
+                <input type="radio" name="curso">
+            </div>
+        </section>
+
+        <label for="sexo">Qual seu sexo:</label>
+        <select name="sexo" id="idsexo">
+            <option value="opt1">Masculino</option>
+            <option value="opt2">Feminino</option>
+            <option value="opt3">Não binário</option>
+            <option value="opt4">Perfiro não informar</option>
+        </select>
+
+        <label for="interesse">Quais seus interesses?</label>
+        <textarea name="interesse" id="idinteresse" placeholder="Digite aqui seus interesses" rows="10" ></textarea>
+
+        <section class="comentario">
+            <label for="comentario">Deixe seu comentário</label>
+            <legend for="email"> E-mail:</legend>
+            <input type="email" placeholder="Digite seu email">
+            <legend for="comentarioTexto">Comentário:</legend>
+            <textarea name="comentarioTexto" id="idcomentarioTexto" placeholder="Digite aqui seu comentário" rows="10" ></textarea>
+            <button class="buttonComentario">Enviar Comentário</button>
+        </section>
+
+        <label>Upload de fotos</label>
+        <input type="file" class="upload">
+
+        <button class="buttonFormulario">Enviar formulário</button>
+
+    </form>
+</body>
+
+</html>
